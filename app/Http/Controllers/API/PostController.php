@@ -30,10 +30,11 @@ class PostController extends Controller
         // var_dump($user);
         // return Post::find(1);
         // return Post::latest()->user->paginate(10);
-        $post = Post::findOrFail($id);
-        foreach ($post->users as $user) {
-            return $post->productsname;
-        }
+        // $user = auth()->id;
+        // foreach ($user->posts as $post) {
+        //     return $post->productsname;
+        // }
+        // return Post::with('user')->auth()->get();
 
     }
 

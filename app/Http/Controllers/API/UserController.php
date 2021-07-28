@@ -28,10 +28,12 @@ class UserController extends Controller
     {
         // $user = User::findOrFail()->id();
         // $user = User::find()->auth()->id();
-        $user = User::find($id);
-        foreach ($user->posts as $post) {
-            return $post->productsname;
-        }
+        // $user = auth()->id;
+        // foreach ($user->posts as $post) {
+        //     return $post->productsname;
+        // }
+        return Post::with($user)->get();
+        // return Post::latest()->user->paginate(10);
     }
 
     /**
